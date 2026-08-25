@@ -1,0 +1,277 @@
+/* style.css
+   Minimal dark theme for the Chinese Vocabulary Review app.
+   All colors, spacing, fonts and sizes are defined as CSS variables
+   below, so the whole theme can be changed by editing this one block. */
+
+:root {
+  /* Colors */
+  --color-bg: #121212; /* near-black page background */
+  --color-surface: #1c1c1c; /* slightly lighter surface, e.g. buttons */
+  --color-text: #f2f2f2; /* off-white main text */
+  --color-text-dim: #999999; /* dimmer text for labels/notes */
+  --color-border: #333333; /* subtle grey border */
+  --color-focus: #666666; /* keyboard focus outline */
+  --color-learnt: #4caf50;
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+
+  /* Fonts */
+  --font-main: "KaiTi", sans-serif;
+  --font-size-label: 0.8rem;
+  --font-size-pinyin-annotation: 1.2rem;
+  --font-size-character: 5rem;
+  --font-size-meaning: 2rem;
+  --font-size-note: 1.5rem;
+  --font-size-button: 1rem;
+
+  /* Sizes */
+  --border-width: 1px;
+  --footer-height: 4.5rem;
+}
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: sans-serif;
+}
+
+/* The two-section study card */
+.card {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* two equal columns on desktop */
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-lg);
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* Subtle border between columns, none after the last one */
+.col:not(:last-child) {
+  border-right: var(--border-width) solid var(--color-border);
+}
+
+.label {
+  font-size: var(--font-size-label);
+  color: var(--color-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Character + pinyin, combined via a <ruby> annotation placed
+   underneath the character instead of the usual on-top position. */
+.char-pinyin {
+  margin: 0;
+  cursor: pointer;
+  user-select: none;
+  font-family: var(--font-main);
+}
+
+.char-pinyin ruby {
+  ruby-position: under;
+  -webkit-ruby-position: after; /* older WebKit fallback */
+  display: inline-block;
+}
+
+#character {
+  font-size: var(--font-size-character);
+  line-height: 1.15;
+}
+
+#character.learnt {
+  color: var(--color-learnt);
+}
+
+#pinyin {
+  font-family: sans-serif;
+  font-weight: normal;
+  font-size: var(--font-size-pinyin-annotation);
+  color: var(--color-text-dim);
+  letter-spacing: 0.02em;
+}
+
+.meaning-text {
+  font-size: var(--font-size-meaning);
+  margin: 0;
+}
+
+.note-text {
+  font-size: var(--font-size-note);
+  color: var(--color-text-dim);
+  margin: 0;
+}
+
+.speak-btn {
+  margin-top: var(--space-xs);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.8rem;
+}
+
+/* .speak-btn is also used on an <a> (the stroke-order link), so give
+   anchors the same look the bare "button" selector gives real buttons. */
+a.speak-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.speak-btn:hover {
+  background-color: var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+a.speak-btn:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Bottom navigation bar */
+.controls {
+  height: var(--footer-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  padding: var(--space-sm);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+button,
+select,
+.shuffle-label {
+  font-family: var(--font-main);
+  font-size: var(--font-size-button);
+  color: var(--color-text);
+  background-color: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-xs) var(--space-md);
+  cursor: pointer;
+}
+
+.shuffle-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+}
+
+button:hover,
+select:hover,
+.shuffle-label:hover {
+  background-color: var(--color-border);
+  transition: background-color 0.2s ease;
+}
+
+button:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Hidden-mode toggle: icon-only, no visible label text */
+.blind-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 4px;
+  background-color: var(--color-surface);
+  cursor: pointer;
+}
+
+.blind-toggle input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.blind-toggle .blind-icon {
+  font-size: 1.2rem;
+}
+
+.blind-toggle:hover {
+  background-color: var(--color-border);
+}
+
+.blind-toggle.active {
+  border-color: var(--color-learnt);
+}
+
+.blind-toggle input:focus-visible + .blind-icon {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Hidden mode: everything but the pinyin is hidden, including the
+   labels and button text in the footer. Only icons remain there. */
+body.blind-mode #character,
+body.blind-mode .meaning-text,
+body.blind-mode .note-text {
+  visibility: hidden;
+}
+
+/* Tapping the character/pinyin area reveals the current word.
+   This resets back to hidden the moment you move to another word. */
+body.blind-mode.revealed #character,
+body.blind-mode.revealed .meaning-text,
+body.blind-mode.revealed .note-text {
+  visibility: visible;
+}
+
+body.blind-mode .label,
+body.blind-mode .btn-text,
+body.blind-mode #wordSelect {
+  display: none;
+}
+
+/* Mobile layout: two equal-height rows instead of two columns */
+@media (max-width: 700px) {
+  :root {
+    --font-size-pinyin-annotation: 0.85rem;
+    --font-size-character: 3.5rem;
+    --font-size-meaning: 1.1rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .col:not(:last-child) {
+    border-right: none;
+    border-bottom: var(--border-width) solid var(--color-border);
+  }
+}

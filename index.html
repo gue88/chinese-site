@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Chinese Vocabulary Review</title>
+
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+
+        <main class="card">
+
+            <section class="col char-col">
+                <div class="label">Character</div>
+                <p class="char-pinyin" id="charPinyinWrap">
+                    <ruby>
+                        <span id="character"></span>
+                        <rt id="pinyin"></rt>
+                    </ruby>
+                </p>
+                <button id="speakBtn" class="speak-btn" aria-label="Listen to pronunciation">🔊<span class="btn-text">
+                        Listen</span></button>
+                <a id="strokeBtn" class="speak-btn stroke-btn" href="#" target="_blank" rel="noopener noreferrer"
+                    aria-label="View stroke order">✍️<span class="btn-text">
+                        Stroke Order</span></a>
+            </section>
+
+            <section class="col meaning-col">
+                <div class="label">Meaning</div>
+                <p class="meaning-text" id="meaning"></p>
+                <p class="note-text" id="note"></p>
+            </section>
+
+        </main>
+
+        <footer class="controls">
+
+            <button id="prevBtn"><span class="icon" aria-hidden="true">◀</span><span class="btn-text">
+                    Previous</span></button>
+
+            <label class="shuffle-label">
+                <input type="checkbox" id="shuffle">
+                <span class="btn-text">Shuffle</span>
+            </label>
+
+            <select id="wordSelect"></select>
+
+            <button id="nextBtn"><span class="btn-text">Next </span><span class="icon"
+                    aria-hidden="true">▶</span></button>
+
+            <button id="resetBtn"><span class="icon" aria-hidden="true">↻</span><span class="btn-text">
+                    Reset</span></button>
+
+            <label class="blind-toggle" id="blindToggleLabel" title="Hide everything except pinyin">
+                <input type="checkbox" id="blindToggle" aria-label="Toggle hidden mode">
+                <span class="blind-icon" aria-hidden="true">👁️</span>
+            </label>
+
+        </footer>
+
+        <script src="vocab.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
