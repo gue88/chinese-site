@@ -9,7 +9,7 @@ const charPinyinWrap = document.getElementById("charPinyinWrap");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
 const shuffleToggle = document.getElementById("shuffle");
-const wordSelect = document.getElementById("wordSelect");
+const wordSelectGroup = document.getElementById("wordSelectGroup");
 const speakBtn = document.getElementById("speakBtn");
 const strokeBtn = document.getElementById("strokeBtn");
 const resetBtn = document.getElementById("resetBtn");
@@ -129,19 +129,81 @@ function saveBlindPreference() {
   }
 }
 
-// Alphabetically sorted copy for the dropdown
-const sortedVocab = [...VOCAB].sort((a, b) => a.pinyin.localeCompare(b.pinyin));
+// Part-of-speech categories, in the order their dropdowns should appear.
+// Only categories that are actually present in VOCAB get a dropdown built.
+const CATEGORY_ORDER = [
+  { key: "noun", label: "Noun" },
+  { key: "proper noun", label: "Proper Noun" },
+  { key: "verb", label: "Verb" },
+  { key: "adjective", label: "Adjective" },
+  { key: "pronoun", label: "Pronoun" },
+  { key: "measure", label: "Measure Word" },
+  { key: "adverb", label: "Adverb" },
+  { key: "particle", label: "Particle" },
+  { key: "conjunction", label: "Conjunction" },
+  { key: "numeral", label: "Numeral" },
+];
 
-// Build dropdown
-sortedVocab.forEach((word) => {
-  const option = document.createElement("option");
-  option.value = VOCAB.indexOf(word);
-  option.textContent = `${word.pinyin} - ${word.chinese}`;
-  wordSelect.appendChild(option);
-});
+// Populated by buildWordSelects(): pos key -> <select> element
+let wordSelects = {};
 
-function updateDropdown() {
-  wordSelect.value = currentIndex;
+// Builds one <select> per part-of-speech category found in VOCAB, each
+// listing that category's words alphabetically by pinyin, and appends
+// them all into #wordSelectGroup.
+function buildWordSelects() {
+  const grouped = {};
+  VOCAB.forEach((word, index) => {
+    if (!grouped[word.pos]) grouped[word.pos] = [];
+    grouped[word.pos].push(index);
+  });
+
+  wordSelectGroup.innerHTML = "";
+  wordSelects = {};
+
+  CATEGORY_ORDER.forEach(({ key, label }) => {
+    const indices = grouped[key];
+    if (!indices || indices.length === 0) return;
+
+    indices.sort((a, b) => VOCAB[a].pinyin.localeCompare(VOCAB[b].pinyin));
+
+    const select = document.createElement("select");
+    select.className = "word-select";
+    select.dataset.pos = key;
+    select.setAttribute("aria-label", label);
+
+    const placeholder = document.createElement("option");
+    placeholder.value = "";
+    placeholder.textContent = label;
+    placeholder.disabled = true;
+    placeholder.selected = true;
+    select.appendChild(placeholder);
+
+    indices.forEach((idx) => {
+      const option = document.createElement("option");
+      option.value = idx;
+      option.textContent = `${VOCAB[idx].pinyin} - ${VOCAB[idx].chinese}`;
+      select.appendChild(option);
+    });
+
+    select.addEventListener("change", () => {
+      if (select.value === "") return;
+      currentIndex = Number(select.value);
+      displayWord();
+    });
+
+    wordSelectGroup.appendChild(select);
+    wordSelects[key] = select;
+  });
+}
+
+// Shows the current word's index in its own category's dropdown, and
+// resets every other category dropdown back to its placeholder.
+function updateWordSelects() {
+  const currentPos = VOCAB[currentIndex].pos;
+
+  Object.entries(wordSelects).forEach(([pos, select]) => {
+    select.value = pos === currentPos ? String(currentIndex) : "";
+  });
 }
 
 // Applies the blind-mode / revealed classes and updates the toggle icon.
@@ -159,7 +221,7 @@ function setRevealed(value) {
 
 // Builds the strokeorder.com search link for a given character/word.
 function strokeOrderUrl(chinese) {
-  return `https://www.strokeorder.com/chinese/search?q=%252F${encodeURIComponent(chinese)}`;
+  return `https://www.strokeorder.com/chinese/search?q=${encodeURIComponent(chinese)}`;
 }
 
 // Paints the current word into the DOM without touching reveal state.
@@ -174,7 +236,7 @@ function renderWord() {
   characterEl.classList.toggle("learnt", learntWords.has(currentIndex));
   strokeBtn.href = strokeOrderUrl(word.chinese);
 
-  updateDropdown();
+  updateWordSelects();
   saveProgress();
 }
 
@@ -259,11 +321,6 @@ nextBtn.addEventListener("click", nextWord);
 
 prevBtn.addEventListener("click", previousWord);
 
-wordSelect.addEventListener("change", () => {
-  currentIndex = Number(wordSelect.value);
-  displayWord();
-});
-
 // Audio button handler
 speakBtn.addEventListener("click", () => {
   speakChinese(VOCAB[currentIndex].chinese);
@@ -284,7 +341,7 @@ resetBtn.addEventListener("click", () => {
 });
 
 // Hidden-mode toggle handler. This is a global setting (not per word):
-// it stays on as you move through Next/Previous/the dropdown until you
+// it stays on as you move through Next/Previous/the dropdowns until you
 // switch it off again.
 blindToggle.addEventListener("change", () => {
   blindMode = blindToggle.checked;
@@ -320,6 +377,7 @@ charPinyinWrap.addEventListener("click", () => {
 });
 
 // Initial boot logic: Restore state from LocalStorage & render
+buildWordSelects();
 loadProgress();
 blindToggle.checked = blindMode;
 updateBlindDisplay();

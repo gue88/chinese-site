@@ -155,7 +155,7 @@ a.speak-btn:focus-visible {
 
 /* Bottom navigation bar */
 .controls {
-  height: var(--footer-height);
+  min-height: var(--footer-height);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,6 +163,17 @@ a.speak-btn:focus-visible {
   gap: var(--space-sm);
   padding: var(--space-sm);
   border-top: var(--border-width) solid var(--color-border);
+}
+
+/* Holds the per-part-of-speech dropdowns built by script.js. It has no
+   box of its own, so each dropdown wraps in the .controls flex row
+   exactly like the buttons around it. */
+.word-select-group {
+  display: contents;
+}
+
+.word-select {
+  max-width: 9.5rem;
 }
 
 button,
@@ -253,7 +264,7 @@ body.blind-mode.revealed .note-text {
 
 body.blind-mode .label,
 body.blind-mode .btn-text,
-body.blind-mode #wordSelect {
+body.blind-mode .word-select-group {
   display: none;
 }
 
