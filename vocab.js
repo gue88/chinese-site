@@ -846,4 +846,18 @@ const VOCAB = [
     note: "做工作 zuò gōngzuò",
     pos: "verb",
   },
+  {
+    chinese: "律师",
+    pinyin: "lǜshī",
+    meaning: "lawyer",
+    note: "他是律师 tā shì lǜshī",
+    pos: "noun",
+  },
+  {
+    chinese: "猫",
+    pinyin: "māo",
+    meaning: "cat",
+    note: "我有一只猫 wǒ yǒu yì zhī māo I have a cat",
+    pos: "noun",
+  },
 ];
