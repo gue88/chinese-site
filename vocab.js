@@ -860,4 +860,11 @@ const VOCAB = [
     note: "我有一只猫 wǒ yǒu yì zhī māo I have a cat",
     pos: "noun",
   },
+  {
+    chinese: "兄弟姐妹",
+    pinyin: "xiōngdì jiěmèi",
+    meaning: "siblings",
+    note: "我有两个兄弟姐妹 wǒ yǒu liǎng ge xiōngdì jiěmèi",
+    pos: "noun",
+  },
 ];
