@@ -867,4 +867,11 @@ const VOCAB = [
     note: "我有两个兄弟姐妹 wǒ yǒu liǎng ge xiōngdì jiěmèi",
     pos: "noun",
   },
+  {
+    chinese: "下午",
+    pinyin: "xiàwǔ",
+    meaning: "afternoon",
+    note: "下午好 xiàwǔ hǎo",
+    pos: "noun",
+  },
 ];
