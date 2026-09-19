@@ -1,5 +1,4 @@
 const VOCAB = [
-  // 啊
   {
     chinese: "啊",
     pinyin: "a",
@@ -8,8 +7,6 @@ const VOCAB = [
     note: "",
     pos: "particle",
   },
-
-  // 爸 / 包 / 贝 / 北 / 不
   {
     chinese: "爸爸",
     pinyin: "bàba",
@@ -18,11 +15,33 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "班",
+    pinyin: "bān",
+    meaning: "class",
+    note: "我们班 wǒmen bān",
+    pos: "noun",
+  },
+  {
+    chinese: "半",
+    pinyin: "bàn",
+    meaning: "half",
+    note: "八点半 bā diǎn bàn",
+    pos: "numeral",
+  },
+  {
     chinese: "包子",
     pinyin: "bāozi",
     meaning: "baozi; steamed stuffed bun",
     note: "吃包子 chī bāozi",
     pos: "noun",
+  },
+  {
+    chinese: "吧",
+    pinyin: "ba",
+    meaning:
+      "a modal particle used at the end of a sentence to indicate consultation, suggestion, request, etc.",
+    note: "一起去吧 yìqǐ qù ba",
+    pos: "particle",
   },
   {
     chinese: "贝贝",
@@ -45,14 +64,19 @@ const VOCAB = [
     note: "不忙 bù máng",
     pos: "adverb",
   },
-
-  // 茶 / 陈 / 吃
   {
     chinese: "茶",
     pinyin: "chá",
     meaning: "tea",
     note: "喝茶 hē chá / 喜欢喝茶 xǐhuan hē chá / 茶很好 chá hěn hǎo",
     pos: "noun",
+  },
+  {
+    chinese: "差",
+    pinyin: "chà",
+    meaning: "to be short of; to lack",
+    note: "差五分八点 chà wǔ fēn bā diǎn",
+    pos: "verb",
   },
   {
     chinese: "陈",
@@ -68,21 +92,19 @@ const VOCAB = [
     note: "吃米饭 chī mǐfàn",
     pos: "verb",
   },
-
-  // 大 / 到 / 的 / 点 / 弟 / 丁 / 都
-  {
-    chinese: "大",
-    pinyin: "dà",
-    meaning: "big",
-    note: "大包子 dà bāozi",
-    pos: "adjective",
-  },
   {
     chinese: "到",
     pinyin: "dào",
     meaning: "to reach; to arrive",
     note: "刚到北京 gāng dào Běijīng",
     pos: "verb",
+  },
+  {
+    chinese: "大",
+    pinyin: "dà",
+    meaning: "big",
+    note: "大包子 dà bāozi",
+    pos: "adjective",
   },
   {
     chinese: "的",
@@ -92,10 +114,24 @@ const VOCAB = [
     pos: "particle",
   },
   {
+    chinese: "点（钟）",
+    pinyin: "diǎn (zhōng)",
+    meaning: "o'clock",
+    note: "九点（钟） jiǔ diǎn (zhōng)",
+    pos: "measure",
+  },
+  {
     chinese: "点心",
     pinyin: "diǎnxin",
     meaning: "snacks; dim sum",
     note: "吃点心 chī diǎnxin",
+    pos: "noun",
+  },
+  {
+    chinese: "电影",
+    pinyin: "diànyǐng",
+    meaning: "movie",
+    note: "看电影 kàn diànyǐng",
     pos: "noun",
   },
   {
@@ -119,8 +155,27 @@ const VOCAB = [
     note: "我们都好 wǒmen dōu hǎo",
     pos: "adverb",
   },
-
-  // 饭
+  {
+    chinese: "对了",
+    pinyin: "duìle",
+    meaning: "by the way; well, yes",
+    note: "对了，你明天晚上有没有时间？ Duìle, nǐ míngtiān wǎnshang yǒu méiyǒu shíjiān?",
+    pos: "conjunction",
+  },
+  {
+    chinese: "多少",
+    pinyin: "duōshao",
+    meaning: "how many; how much",
+    note: "多少个汉字 duōshao gè Hànzì",
+    pos: "pronoun",
+  },
+  {
+    chinese: "多",
+    pinyin: "duō",
+    meaning: "many; much; more",
+    note: "很多课 hěn duō kè",
+    pos: "adjective",
+  },
   {
     chinese: "饭",
     pinyin: "fàn",
@@ -128,14 +183,12 @@ const VOCAB = [
     note: "吃饭 chī fàn",
     pos: "noun",
   },
-
-  // 刚 / 钢 / 高 / 个 / 哥 / 工 / 狗 / 贵 / 国
   {
-    chinese: "刚",
-    pinyin: "gāng",
-    meaning: "just",
-    note: "我刚到 wǒ gāng dào",
-    pos: "adverb",
+    chinese: "分",
+    pinyin: "fēn",
+    meaning: "minute",
+    note: "十点十分 shí diǎn shí fēn",
+    pos: "measure",
   },
   {
     chinese: "钢琴",
@@ -145,6 +198,13 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "刚",
+    pinyin: "gāng",
+    meaning: "just",
+    note: "我刚到 wǒ gāng dào",
+    pos: "adverb",
+  },
+  {
     chinese: "高兴",
     pinyin: "gāoxìng",
     meaning: "happy",
@@ -152,18 +212,18 @@ const VOCAB = [
     pos: "adjective",
   },
   {
-    chinese: "个",
-    pinyin: "gè",
-    meaning: "general measure word",
-    note: "一个哥哥 yí ge gēge",
-    pos: "measure",
-  },
-  {
     chinese: "哥哥",
     pinyin: "gēge",
     meaning: "older brother",
     note: "我的哥哥 wǒ de gēge",
     pos: "noun",
+  },
+  {
+    chinese: "个",
+    pinyin: "gè",
+    meaning: "general measure word",
+    note: "一个哥哥 yí ge gēge",
+    pos: "measure",
   },
   {
     chinese: "工作",
@@ -193,21 +253,19 @@ const VOCAB = [
     note: "中国 Zhōngguó",
     pos: "noun",
   },
-
-  // 还 / 孩 / 汉 / 好 / 好吃 / 和 / 喝 / 很
-  {
-    chinese: "还",
-    pinyin: "hái",
-    meaning: "still; also; in addition",
-    note: "我还有一个弟弟 wǒ hái yǒu yí ge dìdi",
-    pos: "adverb",
-  },
   {
     chinese: "孩子",
     pinyin: "háizi",
     meaning: "child",
     note: "中国孩子 Zhōngguó háizi / 美国孩子 Měiguó háizi / 一个孩子 yí ge háizi",
     pos: "noun",
+  },
+  {
+    chinese: "还",
+    pinyin: "hái",
+    meaning: "still; also; in addition",
+    note: "我还有一个弟弟 wǒ hái yǒu yí ge dìdi",
+    pos: "adverb",
   },
   {
     chinese: "汉语",
@@ -217,11 +275,11 @@ const VOCAB = [
     pos: "proper noun",
   },
   {
-    chinese: "好",
-    pinyin: "hǎo",
-    meaning: "good; well; fine; OK",
-    note: "你好 nǐ hǎo",
-    pos: "adjective",
+    chinese: "汉字",
+    pinyin: "Hànzì",
+    meaning: "Chinese character",
+    note: "学习汉字 xuéxí Hànzì",
+    pos: "noun",
   },
   {
     chinese: "好吃",
@@ -231,11 +289,18 @@ const VOCAB = [
     pos: "adjective",
   },
   {
-    chinese: "和",
-    pinyin: "hé",
-    meaning: "and",
-    note: "我和你 wǒ hé nǐ",
-    pos: "conjunction",
+    chinese: "好",
+    pinyin: "hǎo",
+    meaning: "good; well; fine; OK",
+    note: "你好 nǐ hǎo",
+    pos: "adjective",
+  },
+  {
+    chinese: "很",
+    pinyin: "hěn",
+    meaning: "very",
+    note: "我很好 wǒ hěn hǎo",
+    pos: "adverb",
   },
   {
     chinese: "喝",
@@ -245,26 +310,31 @@ const VOCAB = [
     pos: "verb",
   },
   {
-    chinese: "很",
-    pinyin: "hěn",
-    meaning: "very",
-    note: "我很好 wǒ hěn hǎo",
-    pos: "adverb",
-  },
-
-  // 几 / 家 / 叫 / 饺 / 姐 / 进 / 今
-  {
-    chinese: "几",
-    pinyin: "jǐ",
-    meaning: "how many; several",
-    note: "你家有几口人？nǐ jiā yǒu jǐ kǒu rén?",
-    pos: "pronoun",
+    chinese: "和",
+    pinyin: "hé",
+    meaning: "and",
+    note: "我和你 wǒ hé nǐ",
+    pos: "conjunction",
   },
   {
-    chinese: "家",
-    pinyin: "jiā",
-    meaning: "home; family",
-    note: "我家 wǒ jiā",
+    chinese: "回",
+    pinyin: "huí",
+    meaning: "to return",
+    note: "回家 huí jiā",
+    pos: "verb",
+  },
+  {
+    chinese: "活动",
+    pinyin: "huódòng",
+    meaning: "activity; event",
+    note: "有活动 yǒu huódòng",
+    pos: "noun",
+  },
+  {
+    chinese: "饺子",
+    pinyin: "jiǎozi",
+    meaning: "jiaozi; dumpling",
+    note: "吃饺子 chī jiǎozi",
     pos: "noun",
   },
   {
@@ -275,10 +345,10 @@ const VOCAB = [
     pos: "verb",
   },
   {
-    chinese: "饺子",
-    pinyin: "jiǎozi",
-    meaning: "jiaozi; dumpling",
-    note: "吃饺子 chī jiǎozi",
+    chinese: "家",
+    pinyin: "jiā",
+    meaning: "home; family",
+    note: "我家 wǒ jiā",
     pos: "noun",
   },
   {
@@ -287,13 +357,6 @@ const VOCAB = [
     meaning: "older sister",
     note: "我的姐姐 wǒ de jiějie",
     pos: "noun",
-  },
-  {
-    chinese: "进",
-    pinyin: "jìn",
-    meaning: "to enter",
-    note: "请进 qǐng jìn",
-    pos: "verb",
   },
   {
     chinese: "今年",
@@ -309,8 +372,20 @@ const VOCAB = [
     note: "",
     pos: "noun",
   },
-
-  // 咖 / 看 / 课 / 口
+  {
+    chinese: "进",
+    pinyin: "jìn",
+    meaning: "to enter",
+    note: "请进 qǐng jìn",
+    pos: "verb",
+  },
+  {
+    chinese: "几",
+    pinyin: "jǐ",
+    meaning: "how many; several",
+    note: "你家有几口人？nǐ jiā yǒu jǐ kǒu rén?",
+    pos: "pronoun",
+  },
   {
     chinese: "咖啡",
     pinyin: "kāfēi",
@@ -326,10 +401,31 @@ const VOCAB = [
     pos: "verb",
   },
   {
+    chinese: "刻",
+    pinyin: "kè",
+    meaning: "quarter (of an hour)",
+    note: "两点一刻 liǎng diǎn yí kè",
+    pos: "measure",
+  },
+  {
     chinese: "课",
     pinyin: "kè",
     meaning: "class; lesson; course",
     note: "钢琴课 gāngqín kè / 汉语课 Hànyǔ kè / 没有课 méiyǒu kè",
+    pos: "noun",
+  },
+  {
+    chinese: "恐怕",
+    pinyin: "kǒngpà",
+    meaning: "I'm afraid that...",
+    note: "恐怕不行 kǒngpà bù xíng",
+    pos: "adverb",
+  },
+  {
+    chinese: "口语",
+    pinyin: "kǒuyǔ",
+    meaning: "spoken language",
+    note: "练习口语 liànxí kǒuyǔ",
     pos: "noun",
   },
   {
@@ -339,8 +435,13 @@ const VOCAB = [
     note: "三口人 sān kǒu rén",
     pos: "measure",
   },
-
-  // 老 / 两 / 林 / 陆
+  {
+    chinese: "来",
+    pinyin: "lái",
+    meaning: "to come",
+    note: "来中国 lái Zhōngguó",
+    pos: "verb",
+  },
   {
     chinese: "老师",
     pinyin: "lǎoshī",
@@ -349,11 +450,25 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "累",
+    pinyin: "lèi",
+    meaning: "tired; exhausted",
+    note: "特别累 tèbié lèi",
+    pos: "adjective",
+  },
+  {
     chinese: "两",
     pinyin: "liǎng",
     meaning: "two; both",
     note: "两个妹妹 liǎng ge mèimei",
     pos: "numeral",
+  },
+  {
+    chinese: "练习",
+    pinyin: "liànxí",
+    meaning: "to practice / exercise",
+    note: "做练习 zuò liànxí",
+    pos: "verb",
   },
   {
     chinese: "林娜",
@@ -369,14 +484,12 @@ const VOCAB = [
     note: "",
     pos: "proper noun",
   },
-
-  // 吗 / 马 / 妈 / 忙 / 没 / 美 / 妹 / 们 / 面 / 米 / 名
   {
-    chinese: "吗",
-    pinyin: "ma",
-    meaning: "a modal particle used for a question expecting a yes-no answer",
-    note: "你好吗 nǐ hǎo ma",
-    pos: "particle",
+    chinese: "律师",
+    pinyin: "lǜshī",
+    meaning: "lawyer",
+    note: "他是律师 tā shì lǜshī",
+    pos: "noun",
   },
   {
     chinese: "马大为",
@@ -400,11 +513,18 @@ const VOCAB = [
     pos: "adjective",
   },
   {
-    chinese: "没",
-    pinyin: "méi",
-    meaning: "not; have not; there is not",
-    note: "我没有妹妹 wǒ méiyǒu mèimei",
-    pos: "adverb",
+    chinese: "猫",
+    pinyin: "māo",
+    meaning: "cat",
+    note: "我有一只猫 wǒ yǒu yì zhī māo I have a cat",
+    pos: "noun",
+  },
+  {
+    chinese: "吗",
+    pinyin: "ma",
+    meaning: "a modal particle used for a question expecting a yes-no answer",
+    note: "你好吗 nǐ hǎo ma",
+    pos: "particle",
   },
   {
     chinese: "美国",
@@ -419,6 +539,13 @@ const VOCAB = [
     meaning: "younger sister",
     note: "我的妹妹 wǒ de mèimei",
     pos: "noun",
+  },
+  {
+    chinese: "没",
+    pinyin: "méi",
+    meaning: "not; have not; there is not",
+    note: "我没有妹妹 wǒ méiyǒu mèimei",
+    pos: "adverb",
   },
   {
     chinese: "们",
@@ -442,14 +569,26 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "明天",
+    pinyin: "míngtiān",
+    meaning: "tomorrow",
+    note: "明天早上 míngtiān zǎoshang",
+    pos: "noun",
+  },
+  {
     chinese: "名字",
     pinyin: "míngzi",
     meaning: "name",
     note: "你的名字 nǐ de míngzi",
     pos: "noun",
   },
-
-  // 哪 / 那 / 呢 / 你 / 年 / 你们 / 您 / 女
+  {
+    chinese: "男生",
+    pinyin: "nánshēng",
+    meaning: "male student",
+    note: "我们班的男生 wǒmen bān de nánshēng",
+    pos: "noun",
+  },
   {
     chinese: "哪",
     pinyin: "nǎ",
@@ -470,13 +609,6 @@ const VOCAB = [
     meaning: "a modal particle used for an elliptical question",
     note: "你呢 nǐ ne",
     pos: "particle",
-  },
-  {
-    chinese: "你",
-    pinyin: "nǐ",
-    meaning: "you (singular)",
-    note: "你好 nǐ hǎo",
-    pos: "pronoun",
   },
   {
     chinese: "年",
@@ -500,14 +632,19 @@ const VOCAB = [
     pos: "pronoun",
   },
   {
+    chinese: "你",
+    pinyin: "nǐ",
+    meaning: "you (singular)",
+    note: "你好 nǐ hǎo",
+    pos: "pronoun",
+  },
+  {
     chinese: "女儿",
     pinyin: "nǚ'ér",
     meaning: "daughter",
     note: "我女儿 wǒ nǚ'ér / 女儿很漂亮 nǚ'ér hěn piàoliang",
     pos: "noun",
   },
-
-  // 朋友 / 漂亮
   {
     chinese: "朋友",
     pinyin: "péngyou",
@@ -522,8 +659,13 @@ const VOCAB = [
     note: "真漂亮 zhēn piàoliang / 很漂亮 hěn piàoliang",
     pos: "adjective",
   },
-
-  // 请 / 请问
+  {
+    chinese: "请问",
+    pinyin: "qǐngwèn",
+    meaning: "may I ask; excuse me",
+    note: "请问你叫什么名字 qǐngwèn nǐ jiào shénme míngzi",
+    pos: "verb",
+  },
   {
     chinese: "请",
     pinyin: "qǐng",
@@ -532,20 +674,11 @@ const VOCAB = [
     pos: "verb",
   },
   {
-    chinese: "请问",
-    pinyin: "qǐngwèn",
-    meaning: "may I ask; excuse me",
-    note: "请问你叫什么名字 qǐngwèn nǐ jiào shénme míngzi",
+    chinese: "去",
+    pinyin: "qù",
+    meaning: "to go",
+    note: "一起去 yìqǐ qù",
     pos: "verb",
-  },
-
-  // 人 / 认识
-  {
-    chinese: "人",
-    pinyin: "rén",
-    meaning: "person",
-    note: "北京人 Běijīng rén",
-    pos: "noun",
   },
   {
     chinese: "认识",
@@ -554,14 +687,33 @@ const VOCAB = [
     note: "很高兴认识你 hěn gāoxìng rènshi nǐ",
     pos: "verb",
   },
-
-  // 上海 / 谁 / 什么 / 是 / 宋 / 岁
+  {
+    chinese: "人",
+    pinyin: "rén",
+    meaning: "person",
+    note: "北京人 Běijīng rén",
+    pos: "noun",
+  },
   {
     chinese: "上海",
     pinyin: "Shànghǎi",
     meaning: "Shanghai",
     note: "上海人 Shànghǎi rén",
     pos: "proper noun",
+  },
+  {
+    chinese: "上午",
+    pinyin: "shàngwǔ",
+    meaning: "morning; before noon",
+    note: "今天上午 jīntiān shàngwǔ",
+    pos: "noun",
+  },
+  {
+    chinese: "少",
+    pinyin: "shǎo",
+    meaning: "few; little",
+    note: "很少 hěn shǎo",
+    pos: "adjective",
   },
   {
     chinese: "谁",
@@ -576,6 +728,13 @@ const VOCAB = [
     meaning: "what",
     note: "你叫什么名字 nǐ jiào shénme míngzi",
     pos: "pronoun",
+  },
+  {
+    chinese: "时间",
+    pinyin: "shíjiān",
+    meaning: "time",
+    note: "没有时间 méiyǒu shíjiān",
+    pos: "noun",
   },
   {
     chinese: "是",
@@ -598,8 +757,13 @@ const VOCAB = [
     note: "五岁 wǔ suì / 九岁 jiǔ suì / 几岁 jǐ suì",
     pos: "measure",
   },
-
-  // 他 / 她 / 太 / 天
+  {
+    chinese: "太",
+    pinyin: "tài",
+    meaning: "too; extremely",
+    note: "太忙 tài máng",
+    pos: "adverb",
+  },
   {
     chinese: "他",
     pinyin: "tā",
@@ -615,10 +779,10 @@ const VOCAB = [
     pos: "pronoun",
   },
   {
-    chinese: "太",
-    pinyin: "tài",
-    meaning: "too; extremely",
-    note: "太忙 tài máng",
+    chinese: "特别",
+    pinyin: "tèbié",
+    meaning: "especially",
+    note: "特别忙 tèbié máng",
     pos: "adverb",
   },
   {
@@ -628,14 +792,12 @@ const VOCAB = [
     note: "一天 yì tiān / 两天 liǎng tiān",
     pos: "measure",
   },
-
-  // 晚 / 王 / 晚上 / 问 / 我
   {
-    chinese: "晚",
-    pinyin: "wǎn",
-    meaning: "late",
-    note: "很晚 hěn wǎn / 不晚 bù wǎn",
-    pos: "adjective",
+    chinese: "听说",
+    pinyin: "tīngshuō",
+    meaning: "to be told; to hear of",
+    note: "刚听说 gāng tīngshuō",
+    pos: "verb",
   },
   {
     chinese: "王小云",
@@ -652,6 +814,13 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "晚",
+    pinyin: "wǎn",
+    meaning: "late",
+    note: "很晚 hěn wǎn / 不晚 bù wǎn",
+    pos: "adjective",
+  },
+  {
     chinese: "问",
     pinyin: "wèn",
     meaning: "to ask",
@@ -665,14 +834,26 @@ const VOCAB = [
     note: "我很好 wǒ hěn hǎo",
     pos: "pronoun",
   },
-
-  // 小 / 谢 / 喜 / 姓 / 学 / 学习
+  {
+    chinese: "现在",
+    pinyin: "xiànzài",
+    meaning: "now",
+    note: "现在几点？ xiànzài jǐ diǎn?",
+    pos: "noun",
+  },
   {
     chinese: "小",
     pinyin: "xiǎo",
     meaning: "small",
     note: "小饺子 xiǎo jiǎozi",
     pos: "adjective",
+  },
+  {
+    chinese: "下午",
+    pinyin: "xiàwǔ",
+    meaning: "afternoon",
+    note: "下午好 xiàwǔ hǎo",
+    pos: "noun",
   },
   {
     chinese: "谢谢",
@@ -689,10 +870,45 @@ const VOCAB = [
     pos: "verb",
   },
   {
+    chinese: "行",
+    pinyin: "xíng",
+    meaning: "to be OK",
+    note: "不行 bù xíng",
+    pos: "verb",
+  },
+  {
     chinese: "姓",
     pinyin: "xìng",
     meaning: "one's surname is / surname",
     note: "贵姓 guìxìng",
+    pos: "verb",
+  },
+  {
+    chinese: "兄弟姐妹",
+    pinyin: "xiōngdì jiěmèi",
+    meaning: "siblings",
+    note: "我有两个兄弟姐妹 wǒ yǒu liǎng ge xiōngdì jiěmèi",
+    pos: "noun",
+  },
+  {
+    chinese: "学生",
+    pinyin: "xuésheng",
+    meaning: "student",
+    note: "中国学生 Zhōngguó xuésheng",
+    pos: "noun",
+  },
+  {
+    chinese: "学校",
+    pinyin: "xuéxiào",
+    meaning: "school",
+    note: "回学校 huí xuéxiào",
+    pos: "noun",
+  },
+  {
+    chinese: "学习",
+    pinyin: "xuéxí",
+    meaning: "to study; to learn",
+    note: "学习汉语 xuéxí Hànyǔ",
     pos: "verb",
   },
   {
@@ -702,15 +918,6 @@ const VOCAB = [
     note: "学汉语 xué Hànyǔ",
     pos: "verb",
   },
-  {
-    chinese: "学习",
-    pinyin: "xuéxí",
-    meaning: "to study; to learn",
-    note: "学习汉语 xuéxí Hànyǔ",
-    pos: "verb",
-  },
-
-  // 要 / 也 / 一共 / 英语 / 医生 / 有
   {
     chinese: "要",
     pinyin: "yào",
@@ -740,11 +947,25 @@ const VOCAB = [
     pos: "proper noun",
   },
   {
+    chinese: "一起",
+    pinyin: "yìqǐ",
+    meaning: "together",
+    note: "一起学习 yìqǐ xuéxí",
+    pos: "adverb",
+  },
+  {
     chinese: "医生",
     pinyin: "yīshēng",
     meaning: "doctor",
     note: "他是医生 tā shì yīshēng",
     pos: "noun",
+  },
+  {
+    chinese: "有意思",
+    pinyin: "yǒu yìsi",
+    meaning: "interesting",
+    note: "很有意思 hěn yǒu yìsi",
+    pos: "adjective",
   },
   {
     chinese: "有",
@@ -753,14 +974,12 @@ const VOCAB = [
     note: "我有一个哥哥 wǒ yǒu yí ge gēge",
     pos: "verb",
   },
-
-  // 在 / 再 / 早 / 早上 / 怎么样 / 张 / 照 / 这 / 真 / 中国 / 最近 / 坐 / 做
   {
-    chinese: "在",
-    pinyin: "zài",
-    meaning: "to be (here, there); to be (in, on, at)",
-    note: "在这儿 zài zhèr",
-    pos: "verb",
+    chinese: "语法",
+    pinyin: "yǔfǎ",
+    meaning: "grammar",
+    note: "语法课 yǔfǎ kè",
+    pos: "noun",
   },
   {
     chinese: "再见",
@@ -770,11 +989,11 @@ const VOCAB = [
     pos: "verb",
   },
   {
-    chinese: "早",
-    pinyin: "zǎo",
-    meaning: "early",
-    note: "你早 nǐ zǎo",
-    pos: "adjective",
+    chinese: "在",
+    pinyin: "zài",
+    meaning: "to be (here, there); to be (in, on, at)",
+    note: "在这儿 zài zhèr",
+    pos: "verb",
   },
   {
     chinese: "早上",
@@ -782,6 +1001,13 @@ const VOCAB = [
     meaning: "morning",
     note: "早上好 zǎoshang hǎo",
     pos: "noun",
+  },
+  {
+    chinese: "早",
+    pinyin: "zǎo",
+    meaning: "early",
+    note: "你早 nǐ zǎo",
+    pos: "adjective",
   },
   {
     chinese: "怎么样",
@@ -805,6 +1031,13 @@ const VOCAB = [
     pos: "noun",
   },
   {
+    chinese: "真",
+    pinyin: "zhēn",
+    meaning: "really / real",
+    note: "真好 zhēn hǎo / 真忙 zhēn máng / 真高兴 zhēn gāoxìng",
+    pos: "adverb",
+  },
+  {
     chinese: "这",
     pinyin: "zhè",
     meaning: "this",
@@ -812,10 +1045,10 @@ const VOCAB = [
     pos: "pronoun",
   },
   {
-    chinese: "真",
-    pinyin: "zhēn",
-    meaning: "really / real",
-    note: "真好 zhēn hǎo / 真忙 zhēn máng / 真高兴 zhēn gāoxìng",
+    chinese: "只",
+    pinyin: "zhǐ",
+    meaning: "only",
+    note: "只说汉语 zhǐ shuō Hànyǔ",
     pos: "adverb",
   },
   {
@@ -824,6 +1057,20 @@ const VOCAB = [
     meaning: "China",
     note: "",
     pos: "proper noun",
+  },
+  {
+    chinese: "专业",
+    pinyin: "zhuānyè",
+    meaning: "major (subject)",
+    note: "汉语专业 Hànyǔ zhuānyè",
+    pos: "noun",
+  },
+  {
+    chinese: "主意",
+    pinyin: "zhǔyi",
+    meaning: "idea",
+    note: "好主意 hǎo zhǔyi",
+    pos: "noun",
   },
   {
     chinese: "最近",
@@ -845,294 +1092,5 @@ const VOCAB = [
     meaning: "to do; to make",
     note: "做工作 zuò gōngzuò",
     pos: "verb",
-  },
-  {
-    chinese: "律师",
-    pinyin: "lǜshī",
-    meaning: "lawyer",
-    note: "他是律师 tā shì lǜshī",
-    pos: "noun",
-  },
-  {
-    chinese: "猫",
-    pinyin: "māo",
-    meaning: "cat",
-    note: "我有一只猫 wǒ yǒu yì zhī māo I have a cat",
-    pos: "noun",
-  },
-  {
-    chinese: "兄弟姐妹",
-    pinyin: "xiōngdì jiěmèi",
-    meaning: "siblings",
-    note: "我有两个兄弟姐妹 wǒ yǒu liǎng ge xiōngdì jiěmèi",
-    pos: "noun",
-  },
-  {
-    chinese: "下午",
-    pinyin: "xiàwǔ",
-    meaning: "afternoon",
-    note: "下午好 xiàwǔ hǎo",
-    pos: "noun",
-  },
-  {
-    chinese: "明天",
-    pinyin: "míngtiān",
-    meaning: "tomorrow",
-    note: "明天早上 míngtiān zǎoshang",
-    pos: "noun",
-  },
-  {
-    chinese: "多",
-    pinyin: "duō",
-    meaning: "many; much; more",
-    note: "很多课 hěn duō kè",
-    pos: "adjective",
-  },
-  {
-    chinese: "特别",
-    pinyin: "tèbié",
-    meaning: "especially",
-    note: "特别忙 tèbié máng",
-    pos: "adverb",
-  },
-  {
-    chinese: "点（钟）",
-    pinyin: "diǎn (zhōng)",
-    meaning: "o’clock",
-    note: "九点（钟） jiǔ diǎn (zhōng)",
-    pos: "measure",
-  },
-  {
-    chinese: "上午",
-    pinyin: "shàngwǔ",
-    meaning: "morning; before noon",
-    note: "今天上午 jīntiān shàngwǔ",
-    pos: "noun",
-  },
-  {
-    chinese: "半",
-    pinyin: "bàn",
-    meaning: "half",
-    note: "八点半 bā diǎn bàn",
-    pos: "numeral",
-  },
-  {
-    chinese: "语法",
-    pinyin: "yǔfǎ",
-    meaning: "grammar",
-    note: "语法课 yǔfǎ kè",
-    pos: "noun",
-  },
-  {
-    chinese: "汉字",
-    pinyin: "Hànzì",
-    meaning: "Chinese character",
-    note: "学习汉字 xuéxí Hànzì",
-    pos: "noun",
-  },
-
-  {
-    chinese: "刻",
-    pinyin: "kè",
-    meaning: "quarter (of an hour)",
-    note: "两点一刻 liǎng diǎn yí kè",
-    pos: "measure",
-  },
-  {
-    chinese: "口语",
-    pinyin: "kǒuyǔ",
-    meaning: "spoken language",
-    note: "练习口语 liànxí kǒuyǔ",
-    pos: "noun",
-  },
-  {
-    chinese: "累",
-    pinyin: "lèi",
-    meaning: "tired; exhausted",
-    note: "特别累 tèbié lèi",
-    pos: "adjective",
-  },
-  {
-    chinese: "对了",
-    pinyin: "duìle",
-    meaning: "by the way; well, yes",
-    note: "对了，你明天晚上有没有时间？ Duìle, nǐ míngtiān wǎnshang yǒu méiyǒu shíjiān?",
-    pos: "conjunction",
-  },
-  {
-    chinese: "时间",
-    pinyin: "shíjiān",
-    meaning: "time",
-    note: "没有时间 méiyǒu shíjiān",
-    pos: "noun",
-  },
-  {
-    chinese: "电影",
-    pinyin: "diànyǐng",
-    meaning: "movie",
-    note: "看电影 kàn diànyǐng",
-    pos: "noun",
-  },
-  {
-    chinese: "一起",
-    pinyin: "yìqǐ",
-    meaning: "together",
-    note: "一起学习 yìqǐ xuéxí",
-    pos: "adverb",
-  },
-  {
-    chinese: "去",
-    pinyin: "qù",
-    meaning: "to go",
-    note: "一起去 yìqǐ qù",
-    pos: "verb",
-  },
-  {
-    chinese: "吧",
-    pinyin: "ba",
-    meaning:
-      "a modal particle used at the end of a sentence to indicate consultation, suggestion, request, etc.",
-    note: "一起去吧 yìqǐ qù ba",
-    pos: "particle",
-  },
-  {
-    chinese: "恐怕",
-    pinyin: "kǒngpà",
-    meaning: "I'm afraid that...",
-    note: "恐怕不行 kǒngpà bù xíng",
-    pos: "adverb",
-  },
-  {
-    chinese: "行",
-    pinyin: "xíng",
-    meaning: "to be OK",
-    note: "不行 bù xíng",
-    pos: "verb",
-  },
-  {
-    chinese: "练习",
-    pinyin: "liànxí",
-    meaning: "to practice / exercise",
-    note: "做练习 zuò liànxí",
-    pos: "verb",
-  },
-  {
-    chinese: "现在",
-    pinyin: "xiànzài",
-    meaning: "now",
-    note: "现在几点？ xiànzài jǐ diǎn?",
-    pos: "noun",
-  },
-  {
-    chinese: "差",
-    pinyin: "chà",
-    meaning: "to be short of; to lack",
-    note: "差五分八点 chà wǔ fēn bā diǎn",
-    pos: "verb",
-  },
-  {
-    chinese: "分",
-    pinyin: "fēn",
-    meaning: "minute",
-    note: "十点十分 shí diǎn shí fēn",
-    pos: "measure",
-  },
-  {
-    chinese: "回",
-    pinyin: "huí",
-    meaning: "to return",
-    note: "回家 huí jiā",
-    pos: "verb",
-  },
-  {
-    chinese: "学校",
-    pinyin: "xuéxiào",
-    meaning: "school",
-    note: "回学校 huí xuéxiào",
-    pos: "noun",
-  },
-  {
-    chinese: "班",
-    pinyin: "bān",
-    meaning: "class",
-    note: "我们班 wǒmen bān",
-    pos: "noun",
-  },
-  {
-    chinese: "活动",
-    pinyin: "huódòng",
-    meaning: "activity; event",
-    note: "有活动 yǒu huódòng",
-    pos: "noun",
-  },
-  {
-    chinese: "听说",
-    pinyin: "tīngshuō",
-    meaning: "to be told; to hear of",
-    note: "刚听说 gāng tīngshuō",
-    pos: "verb",
-  },
-  {
-    chinese: "男生",
-    pinyin: "nánshēng",
-    meaning: "male student",
-    note: "我们班的男生 wǒmen bān de nánshēng",
-    pos: "noun",
-  },
-  {
-    chinese: "少",
-    pinyin: "shǎo",
-    meaning: "few; little",
-    note: "很少 hěn shǎo",
-    pos: "adjective",
-  },
-  {
-    chinese: "只",
-    pinyin: "zhǐ",
-    meaning: "only",
-    note: "只说汉语 zhǐ shuō Hànyǔ",
-    pos: "adverb",
-  },
-  {
-    chinese: "多少",
-    pinyin: "duōshao",
-    meaning: "how many; how much",
-    note: "多少个汉字 duōshao gè Hànzì",
-    pos: "pronoun",
-  },
-  {
-    chinese: "有意思",
-    pinyin: "yǒu yìsi",
-    meaning: "interesting",
-    note: "很有意思 hěn yǒu yìsi",
-    pos: "adjective",
-  },
-  {
-    chinese: "学生",
-    pinyin: "xuésheng",
-    meaning: "student",
-    note: "中国学生 Zhōngguó xuésheng",
-    pos: "noun",
-  },
-  {
-    chinese: "来",
-    pinyin: "lái",
-    meaning: "to come",
-    note: "来中国 lái Zhōngguó",
-    pos: "verb",
-  },
-  {
-    chinese: "专业",
-    pinyin: "zhuānyè",
-    meaning: "major (subject)",
-    note: "汉语专业 Hànyǔ zhuānyè",
-    pos: "noun",
-  },
-  {
-    chinese: "主意",
-    pinyin: "zhǔyi",
-    meaning: "idea",
-    note: "好主意 hǎo zhǔyi",
-    pos: "noun",
   },
 ];
