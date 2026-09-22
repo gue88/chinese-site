@@ -20,7 +20,7 @@
   --space-lg: 2rem;
 
   /* Fonts */
-  --font-main: "KaiTi", sans-serif;
+  --font-main: "KaiTi", "KaiTi SC", sans-serif;
   --font-size-label: 0.8rem;
   --font-size-pinyin-annotation: 1.2rem;
   --font-size-character: 5rem;
